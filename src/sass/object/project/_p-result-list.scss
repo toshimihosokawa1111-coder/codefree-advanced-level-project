@@ -1,0 +1,41 @@
+@use "global" as *;
+
+.p-result-list {
+  padding-top: myrem(40);
+  padding-bottom: myrem(60);
+
+  @include mq(md) {
+    padding-top: myrem(67);
+    padding-bottom: myrem(210);
+  }
+}
+
+.p-result-list__title {
+  font-size: myrem(25);
+  font-weight: bold;
+  line-height: calc(40 / 25);
+  text-align: center;
+
+  @include mq(md) {
+    line-height: calc(38 / 25);
+  }
+}
+
+.p-result-list__list {
+  display: flex;
+  flex-direction: column;
+  //row-gap: myrem(50);
+  margin-top: myrem(25);
+
+  @include mq(md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);   // PCは2列
+    column-gap: myrem(106);                  // 概算。Figmaで測り直す
+    row-gap: myrem(61);
+    margin-top: myrem(40);
+  }
+}
+
+.p-result-list__item:nth-child(n + 5) {
+  margin-top: myrem(10);
+}

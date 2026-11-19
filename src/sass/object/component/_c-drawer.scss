@@ -4,37 +4,31 @@
   position: fixed;
   top: myrem(50);
   right: 0;
-  width: calc(300 / 375 * 100%);
-  background: $green;
+  width: myrem(300);
+  background: $red;
   transform: translateX(200%);
   transition: transform 0.5s ease;
   z-index: 90;
 }
 
 .c-drawer.is-open {
-    transform: translateX(0);
-  }
-
-.c-drawer__nav {
-  padding-top: myrem(14);
-  padding-bottom: myrem(12);
-  padding-left: myrem(20);
+  transform: translateX(0);
 }
 
 .c-drawer__items {
   display: flex;
   flex-direction: column;
-  gap: myrem(25);
-}
-
-.c-drawer__item {
-
 }
 
 .c-drawer__link {
+  display: flex;
+  align-items: center;
+  padding-left: myrem(20);
+  height: myrem(58);
+  width: 100%;
   font-size: myrem(18);
   font-weight: 600;
   color: $white;
   text-transform: uppercase;
-  line-height: 1.83333;
+  line-height: calc(33 / 18);
 }

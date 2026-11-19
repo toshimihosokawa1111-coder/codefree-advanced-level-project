@@ -1,0 +1,36 @@
+@use "global" as *;
+
+.p-faq {
+  padding-top: myrem(57);
+
+  @include mq(md) {
+    padding-top: myrem(87);
+  }
+}
+
+.p-faq__inner {
+
+}
+
+.p-faq__title {
+  font-size: myrem(25);
+  font-weight: bold;
+  list-style: calc(40 / 25);
+  text-align: center;
+
+  @include mq(md) {
+    font-size: myrem(30);
+    line-height: calc(50 / 30);
+  }
+}
+
+.p-faq__list {
+  margin-top: myrem(39);
+
+  @include mq(md) {
+    margin-top: myrem(35);
+  }
+}
+
+.p-faq__item {
+}  

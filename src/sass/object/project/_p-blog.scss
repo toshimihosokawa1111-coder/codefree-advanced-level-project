@@ -1,0 +1,53 @@
+@use "global" as *;
+
+.p-blog {
+  padding-top: myrem(45);
+  padding-bottom: myrem(191);
+
+  @include mq(md) {
+    padding-top: myrem(68);
+    padding-bottom: myrem(205);
+  }
+}
+
+.p-blog__title {
+  font-size: myrem(25);
+  font-weight: bold;
+  line-height: calc(40 / 25);
+  text-align: center;
+
+  @include mq(md) {
+    font-size: myrem(30);
+    line-height: calc(45 / 30);
+  }
+}
+
+.p-blog__list {
+  margin-top: myrem(39);
+  display: grid;
+  row-gap: myrem(41);
+
+  @include mq(md) {
+    margin-top: myrem(38);
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: myrem(50);
+  }
+
+}
+
+.p-blog__more {
+  margin-top: myrem(37);
+  text-align: center;
+
+  @include mq(md) {
+    text-align: right;
+  }
+}
+
+.p-blog__more-link {
+  font-size: myrem(18);
+  line-height: calc(30 / 18);
+  text-decoration: underline;
+}
+
+

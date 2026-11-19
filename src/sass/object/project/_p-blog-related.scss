@@ -1,0 +1,29 @@
+@use "global" as *;
+
+.p-blog-related__title {
+  @include mq(md) {
+    justify-content: flex-start;
+    padding-left: myrem(30);
+  }
+}
+
+.p-blog-related__list {
+  margin-top: myrem(21);
+
+  @include mq(md) {
+    margin-top: myrem(30);
+  }
+}
+
+.p-blog-related__item {
+  margin-top: myrem(21);
+
+  @include mq(md) {
+    margin-top: myrem(30);
+  }
+}
+
+.p-blog-related__item:first-child {
+  margin-top: 0;
+}
+

@@ -1,0 +1,61 @@
+@use "global" as *;
+
+.c-pagination {
+  margin-top: myrem(59);
+
+  @include mq(md) {
+    margin-top: myrem(70);
+  }
+}
+
+.c-pagination__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+  width: 100%;
+  column-gap: myrem(5);
+
+  @include mq(md) {
+    column-gap: myrem(10);
+
+  }
+}
+
+.c-pagination__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: myrem(44);
+  height: myrem(44);
+  border: 1px solid $black;
+  font-size: myrem(16);
+  font-weight: bold;
+  line-height: calc(28 / 16);
+
+  @include mq(md) {
+    width: myrem(50);
+    height: myrem(50);
+    font-size: myrem(18);
+    line-height: calc(30 / 18);
+  }
+}
+
+.c-pagination__item--ellipsis {
+  font-size: myrem(16);
+  font-weight: bold;
+  line-height: calc(28 / 16);
+  padding-inline: myrem(7);
+
+  @include mq(md) {
+    font-size: myrem(18);
+    line-height: calc(30 / 18);
+    padding-inline: myrem(10);
+  }
+}
+
+.c-pagination__link.is-current {
+  background: $black;
+  color: $white;
+}
+

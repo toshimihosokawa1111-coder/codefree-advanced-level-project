@@ -1,0 +1,168 @@
+@use "global" as *;
+
+.p-blog-article__body {
+
+}
+
+.p-blog-article__body h2 {
+  margin-top: myrem(39);
+  font-size: myrem(20);
+  font-weight: bold;
+  line-height: calc(30 / 20);
+
+  @include mq(md) {
+    margin-top: myrem(33);
+    line-height: calc(40 / 20);
+  }
+}
+
+.p-blog-article__body p {
+  margin-top: myrem(27);
+  font-size: myrem(16);
+  line-height: calc(30 / 16);
+
+  @include mq(md) {
+    margin-top: myrem(48);
+    font-size: myrem(18);
+    line-height: calc(30 / 18);
+  }
+}
+
+.p-blog-article__body h2 + p {
+  margin-top: myrem(17);
+
+  @include mq(md) {
+    margin-top: myrem(15);
+  }
+}
+
+.p-blog-article__body figure {
+  margin-top: myrem(39);
+
+  @include mq(md) {
+    margin-top: myrem(17);
+  }
+}
+
+.p-blog-article__body img {
+  aspect-ratio: 335 / 200;
+  object-fit: cover;
+  vertical-align: bottom;
+  @include mq(md) {
+    width: myrem(335);
+  }
+}
+
+.p-blog-article__body ul  {
+  margin-top: myrem(27);
+  margin-bottom: myrem(38);
+
+  @include mq(md) {
+    margin-top: myrem(29);
+    margin-bottom: myrem(40);
+  }
+}
+
+.p-blog-article__body li  {
+  position: relative;
+  font-size: myrem(16);
+  line-height: calc(30 / 16);
+  padding-left: myrem(16);
+
+  &::before {
+    content: "・";
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  @include mq(md) {
+    font-size: myrem(18);
+    line-height: calc(30 / 18);
+  }
+}
+
+.p-blog-article__body h3 {
+  position: relative;
+  margin-top: myrem(48);
+  font-size: myrem(20);
+  font-weight: bold;
+  line-height: calc(30 / 20);
+  padding-left: myrem(9.5);
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: myrem(3);
+    height: myrem(50);
+    background: $black;
+  }
+
+  @include mq(md) {
+
+    &::after {
+      height: myrem(20);
+      top: myrem(3);
+    }
+  }
+}
+
+.p-blog-article__body blockquote  {
+  position: relative;
+  padding: myrem(17) myrem(20) myrem(11) myrem(70);
+  margin-top: myrem(20);
+  background: $bg-light-gray;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: myrem(22);
+    left: myrem(25);
+    width: myrem(27);
+    height: myrem(23);
+    line-height: 1;
+    background-image: url(../images/comma.svg);
+  }
+
+  @include mq(md) {
+    padding: myrem(18) myrem(30) myrem(10) myrem(67);
+
+    &::before {
+      left: myrem(30);
+    }
+  }
+}
+
+.p-blog-article__body blockquote p {
+  margin-top: 0;
+}
+
+.p-blog-article__body blockquote + p {
+  margin-top: myrem(27);
+}
+
+.p-blog-article__body a {
+  position: relative;
+  display: inline;
+  font-size: myrem(20);
+  font-weight: bold;
+  line-height: calc(30 / 20);
+  color: $red;
+  z-index: 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: myrem(-3);
+    width: 100%;
+    height: 1px;
+    background: $red;
+    z-index: 1;
+ }
+}
+
+
+

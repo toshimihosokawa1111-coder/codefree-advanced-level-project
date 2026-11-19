@@ -1,0 +1,140 @@
+@use "global" as *;
+
+.p-blog-side__widget {
+  margin-top: myrem(30);
+}
+
+.p-blog-side__widget:first-child {
+  margin-top: 0;
+}
+
+.p-blog-side__widget:last-child {
+  margin-top: myrem(22);
+
+  @include mq(md) {
+    margin-top: myrem(30);
+  }
+}
+
+.p-blog-side__box {
+  padding: myrem(20);
+  border: 1px solid $black;
+  border-top: none;
+
+  @include mq(md) {
+    padding: myrem(15);
+  }
+}
+
+.p-blog-side__banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 295 / 228;
+  background: $bg-light-gray;
+  font-size: myrem(18);
+  font-weight: bold;
+  line-height: calc(33 / 18);
+
+  @include mq(md) {
+    aspect-ratio: 220 / 170;
+  }
+}
+
+.p-blog-side__search {
+  display: flex;
+}
+
+.p-blog-side__input {
+  flex: 1;
+  min-width: 0;
+  height: myrem(54);
+  padding-inline: myrem(10);
+  font-size: myrem(18);
+  background: $bg-light-gray;
+  border: none;
+  border-radius: 0;
+  appearance: none;
+
+  @include mq(md) {
+    height: myrem(40);
+  }
+}
+
+.p-blog-side__submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: myrem(54);
+  height: myrem(54);
+  background: $black;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.4s;
+
+  @include mq(md) {
+    width: myrem(40);
+    height: myrem(40);
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.p-blog-side__submit img {
+  width: myrem(27);
+  height: auto;
+
+  @include mq(md) {
+    width: myrem(20);
+  }
+}
+
+.p-blog-side__posts {
+  margin-top: myrem(30);
+
+  @include mq(md) {
+    margin-top: myrem(15);
+  }
+}
+
+.p-blog-side__post-title {
+  padding-top: 0;
+
+  @include mq(md) {
+    font-size: myrem(17);
+    line-height: calc(28 / 17);
+  }
+}
+
+.p-blog-side__link {
+  @include mq(md) {
+    column-gap: myrem(16);
+  }
+}
+
+
+.p-blog-side__post-img {
+  width: myrem(160);
+  aspect-ratio: 160 / 110;
+
+  @include mq(md) {
+    width: myrem(95);
+    aspect-ratio: 95 / 75;
+  }
+}
+
+.p-blog-side__category-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: myrem(17);
+  line-height: calc(28 / 17);
+  width: 100%;
+  height: myrem(47);
+  padding-top: myrem(5);
+  border-bottom: 1px solid $black;
+}

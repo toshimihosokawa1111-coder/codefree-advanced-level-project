@@ -1,0 +1,91 @@
+@use "global" as *;
+
+.p-flow {
+  padding-top: myrem(46);
+
+  @include mq(md) {
+    padding-top: myrem(34);
+    padding-bottom: myrem(21);
+  }
+}
+
+.p-flow__inner {
+  padding-inline: myrem(30);
+}
+
+.p-flow__title {
+  font-size: myrem(25);
+  font-weight: bold;
+  line-height: calc(40 / 25);
+  text-align: center;
+
+  @include mq(md) {
+    font-size: myrem(30);
+    line-height: calc(50 / 30);
+  }
+}
+
+.p-flow__list {
+  --shift: 0px;
+  position: relative;
+  margin-top: myrem(36);
+  padding-left: var(--shift);
+
+  @include mq(md) {
+    --shift: #{myrem(52)};
+    margin-top: myrem(53);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: myrem(3);
+    height: myrem(669);
+    background: $red;
+    left: calc(var(--shift) + #{myrem(8)});
+    bottom: myrem(13);
+
+    @include mq(md) {
+      height: myrem(407);
+      bottom: myrem(-17);
+    }
+  }
+}
+
+.p-flow__item {
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: myrem(8);
+    width: myrem(3);
+    height: myrem(25);
+    background: $red;
+    border-radius: myrem(3);
+
+    @include mq(md) {
+      bottom: myrem(-23);
+    }
+  }
+
+  &::before {
+    transform: translateX(-50%) rotate(45deg);
+    left: myrem(17);
+    left: calc(var(--shift) + #{myrem(17)});
+  }
+  
+  &::after {
+    transform: translateX(-50%) rotate(-45deg);
+    left: 0;
+    left: calc(var(--shift) + 0);
+  }
+}
+
+.p-flow__item:not(:first-child) {
+  margin-top: myrem(36);
+
+  @include mq(md) {
+    margin-top: myrem(58);
+  }
+}
+

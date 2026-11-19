@@ -4,8 +4,9 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
   width: 100%;
+  z-index: 1000;
+  background-color: $white;
   height: myrem(50);
   transition: background 0.4s ease;
 
@@ -15,99 +16,170 @@
 }
 
 .p-header__inner {
-  width: 100%;
-  height: myrem(50);
-  padding-left: myrem(20);
-  padding-right: myrem(20);
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  height: myrem(50);
+  padding-right: 0;
+  padding-left: myrem(20);
 
   @include mq(md) {
+    padding-left: myrem(30);
+    padding-right: myrem(30);
     height: myrem(80);
-    max-width: myrem(1080);
-    margin: 0 auto;
-    padding-left: myrem(80);
-    padding-right: myrem(80);
   }
+}
+
+.p-header__logo {
+
 }
 
 .p-header__logo a {
-  font-size: myrem(20);
-  line-height: 1.65;
-  font-weight: 500;
-  color: $white;
-  transition: .4s;
   display: flex;
   align-items: center;
+  gap: myrem(6);
   height: myrem(50);
 
   @include mq(md) {
     height: myrem(80);
-
-    &:hover {
-      opacity: 0.7;
-      cursor: pointer;
-    }
+    gap: myrem(10);
   }
 }
 
-.p-header__hamburger {
-  margin-right: myrem(-20);
-  margin-top: -2px;
+.p-header__image {
+  display: block;
+  width: myrem(20);
+  aspect-ratio: 20 / 31;
+  @include mq(md) {
+    width: myrem(32);
+    aspect-ratio: 32 / 49;
+  }
+}
+
+.p-header__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.p-header__title {
+  display: block;
+  font-size: myrem(13);
+  font-weight: bold;
+  line-height: calc(14 / 13);
+  padding-top: myrem(2);
+
+  @include mq(md) {
+    padding-top: myrem(3);
+    font-size: myrem(20);
+    line-height: calc(23 / 20);
+  }
+}
+
+.p-header__title span {
+  @include mq(md) {
+    display: block;
+    font-size: myrem(15);
+    line-height: calc(23 / 15);
+  }
 }
 
 .p-header__nav {
   display: none;
-
   @include mq(md) {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: myrem(33);
   }
 }
 
-.p-header__items {
-  display: flex;
-  align-items: center;
-  column-gap: myrem(31);
+.p-header-nav {
+
 }
 
-.p-header__item a {
-  font-size: myrem(18);
-  font-weight: 500;
-  line-height: 1;
-  color: $white;
-  text-transform: uppercase;
-  position: relative;
+.p-header-nav__items {
+  @include mq(md) {
+    display: flex;
+    align-items: center;
+    gap: myrem(33);
+  }
+}
+
+.p-header-nav__item {
+
+}
+
+.p-header-nav__link {
+  display: inline-block;
+  font-size: myrem(17);
+  font-weight: bold;
+  line-height: calc(33 / 17);
   display: flex;
   align-items: center;
+  position: relative;
 
   @include mq(md) {
     height: myrem(80);
   }
 }
 
-.p-header__item a::after {
+.p-header-nav__link::after {
   content: "";
-  display: none;
+  display: block;
+  position: absolute;
+  bottom: myrem(24);
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: $red;
+  transition: width 0.4s;
+}
+
+.p-header-nav__link:hover::after {
+  width: 100%;
+}
+
+
+//ハンバーガーメニュー
+
+.p-header__hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: myrem(8);
+  background: $red;
+  width: myrem(71);
+  height: 100%;
+  cursor: pointer;
+  z-index: 1000;
 
   @include mq(md) {
-    display: block;
-    width: 0;
-    height: 1px;
-    background: $white;
-    transition: width .3s;
-    position: absolute;
-    bottom: myrem(27);
-    left: 0;
+    display: none;
   }
 }
 
-.p-header__item a:hover::after {
-  @include mq(md) {
-    width: 100%;
-  }
+.p-header__hamburger span {
+  display: block;
+  width: myrem(32);
+  height: myrem(4);
+  background-color: $white;
+  border-radius: 50px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-.p-header.is-scrolled {
-  background: $green;
+.p-header__hamburger.is-open span:nth-child(1) {
+  transform: translateY(myrem(12)) rotate(45deg);
+}
+
+.p-header__hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.p-header__hamburger.is-open span:nth-child(3) {
+  transform: translateY(myrem(-12)) rotate(-45deg);
 }

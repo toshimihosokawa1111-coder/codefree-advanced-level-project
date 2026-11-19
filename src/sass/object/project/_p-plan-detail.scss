@@ -1,0 +1,222 @@
+@use "global" as *;
+
+.p-plan-detail {
+  padding-top: myrem(38);
+  padding-bottom: myrem(186);
+
+  @include mq(md) {
+    padding-top: myrem(57);
+    padding-bottom: myrem(223);
+  }
+}
+
+.p-plan-detail__inner {
+
+}
+
+.p-plan-detail__title {
+  text-align: center;
+  font-size: myrem(25);
+  font-weight: bold;
+  line-height: calc(40 / 25);
+
+  @include mq(md) {
+    font-size: myrem(25);
+    line-height: calc(38 / 25);
+  }
+}
+
+.p-plan-detail__scroll {
+  margin-top: myrem(19);
+  overflow-x: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include mq(md) {
+    margin-top: myrem(50);
+    margin-inline: auto;
+    overflow-x: visible;
+  }
+}
+
+.p-plan-detail__table {
+  width: 100%;
+  table-layout: fixed;
+  min-width: myrem(670);
+  border-collapse: separate;
+  border-spacing: 0;
+
+  @include mq(md) {
+    min-width: 0;
+  }
+}
+
+.p-plan-detail__bar {
+  margin-top: myrem(18);
+
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.p-plan-detail__bar-track {
+  position: relative;
+  width: 100%;
+  height: myrem(25);
+  background: rgba(80, 80, 80, 0.149);
+}
+
+.p-plan-detail__bar-thumb {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: myrem(100);
+  height: myrem(23);
+  background: rgba(80, 80, 80, 0.25);
+  transform: translateY(-50%);
+}
+
+.p-plan-detail__corner {
+  border-bottom: 1px solid $black;
+
+}
+
+.p-plan-detail__name {
+  position: relative;
+  height: myrem(66);
+  color: $white;
+  font-size: myrem(20);
+  font-weight: bold;
+  line-height: calc(25 / 20);
+  text-align: center;
+  z-index: 0;
+
+  @include mq(md) {
+    height: myrem(80);
+    line-height: calc(33 / 20);
+  }
+
+}
+
+.p-plan-detail__name-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: myrem(66);
+  background: $black;
+  z-index: 1;
+  padding-top: myrem(5);
+
+  @include mq(md) {
+    height: myrem(50);
+  }
+}
+
+.p-plan-detail__name--recommend {
+  background: $red;
+  position: relative;
+  line-height: calc(25 / 20);
+  padding: 0;
+  height: myrem(66);
+
+  @include mq(md) {
+    height: myrem(80);
+    line-height: calc(33 / 20);
+  }
+}
+
+.p-plan-detail__badge {
+  display: block;
+  font-size: myrem(17);
+  line-height: calc(33 / 17);
+  position: relative;
+  top: myrem(5);
+}
+
+.p-plan-detail__label {
+  padding-left: myrem(9);
+  padding-top: myrem(5);
+  font-size: myrem(16);
+  font-weight: normal;
+  line-height: calc(30 / 16);
+  text-align: left;
+
+  @include mq(md) {
+    padding-left: myrem(19);
+    font-size: myrem(17);
+    line-height: calc(30 / 17);
+  }
+}
+
+.p-plan-detail__table tbody tr:first-child .p-plan-detail__label {
+  font-weight: bold;
+}
+
+.p-plan-detail__table tbody tr:nth-child(even) {
+  background: rgba(80, 80, 80, 0.15);
+}
+
+.p-plan-detail__cell {
+  height: myrem(85);
+  border-left: 1px solid $black;
+  vertical-align: middle;
+  text-align: center;
+  padding-top: myrem(7);
+}
+
+.p-plan-detail__cell--price {
+  font-size: myrem(22);
+  font-weight: bold;
+  padding-top: myrem(10);
+}
+
+.p-plan-detail__cell--price.p-plan-detail__cell--recommend {
+  color: $red;
+}
+
+.p-plan-detail__none {
+  display: inline-block;
+  width: myrem(30);
+  height: myrem(1);
+  background: #707070;
+  position: relative;
+  top: myrem(-8);
+}
+
+.p-plan-detail__cell--recommend .p-plan-detail__dot {
+  background: $red;
+}
+
+.p-plan-detail__dot {
+  display: inline-block;
+  width: myrem(15);
+  height: myrem(15);
+  background: $black;
+  border-radius: 50%;
+}
+
+.p-plan-detail__sub {
+  display: block;
+  font-size: myrem(17);
+  line-height: calc(25 / 17);
+  margin-top: myrem(3);
+}
+
+.p-plan-detail__note {
+  margin-top: myrem(17);
+  font-size: myrem(16);
+  line-height: calc(30 / 16);
+
+  @include mq(md) {
+    margin-top: myrem(28);
+    font-size: myrem(17);
+    line-height: calc(25 / 17);
+  }
+}

@@ -1,16 +1,14 @@
 @use "global" as *;
 
 // インナー幅＋余白
-$breakpointInner: 1080px;
+$breakpointInner: 920px;
 
 // ルートフォント設定
 html {
-  // 376px ~ 767px
-  font-size: 100%;
 
-  // ~ 374px
-  @media (max-width: 374px) {
-    font-size: vw(375, 14);
+  // ~ 767px
+  @media (max-width: 767px) {
+    font-size: vw(375, 16);
   }
 
   // 768px ~ インナー幅＋余白
@@ -23,6 +21,7 @@ html {
     font-size: 100%;
   }
 
+  // スムーススクロール
   scroll-behavior: smooth;
   scroll-padding-top: myrem(50);
 
@@ -35,11 +34,13 @@ html {
 body {
   font-family: $font-main;
   color: $black;
+  background: $white;
   letter-spacing: 0;
+  font-weight: 500;
 }
 
 // ホバー
-/*a,
+a,
 button {
   @include mq(md) {
     transition: .4s;
@@ -48,11 +49,19 @@ button {
       cursor: pointer;
     }
   }
-} */
+}
 
 // 画像の基本スタイル
 img {
   width: 100%;
   height: auto;
   display: block;
+}
+
+// iPhone Safari対策：フォーム部品の標準スタイル（角丸・影など）をリセット
+input,
+textarea,
+select {
+  border-radius: 0;
+  appearance: none;
 }

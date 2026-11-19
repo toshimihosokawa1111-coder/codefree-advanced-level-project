@@ -1,0 +1,80 @@
+@use "global" as *;
+
+.p-reason-item {
+  @include mq(md) {
+    --indent: #{myrem(50)};
+    display: flex;
+    gap: var(--indent);
+  }
+}
+
+
+.p-reason-item__img {
+  aspect-ratio: 335 / 200;
+
+  @include mq(md) {
+    aspect-ratio: 350 / 247;
+    flex-shrink: 0;
+    width: myrem(350);
+  }
+}
+
+.p-reason-item__img img {
+
+}
+
+.p-reason-item__content {
+
+  @include mq(md) {
+    flex: 1;
+  }
+}
+
+.p-reason-item:first-child .p-reason-item__content {
+  @include mq(md) {
+    padding-top: myrem(7);
+  }
+}
+
+.p-reason-item__title {
+  margin-top: myrem(30);
+  font-size: myrem(20);
+  font-weight: bold;
+  line-height: calc(30 / 20);
+  padding-bottom: myrem(10);
+  position: relative;
+
+  @include mq(md) {
+    margin-top: 0;
+    font-size: myrem(22);
+    line-height: calc(33 / 22);
+    padding-bottom: myrem(12);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: myrem(2);
+    background: $red;
+
+    @include mq(md) {
+      left: calc(-1 * var(--indent));
+      width: calc(100% + var(--indent));
+    }
+  }
+}
+
+.p-reason-item__text {
+  margin-top: myrem(17);
+  font-size: myrem(16);
+  line-height: calc(30 /16);
+
+  @include mq(md) {
+    margin-top: myrem(37);
+    font-size: myrem(18);
+    line-height: calc(33 / 18);
+  }
+}

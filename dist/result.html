@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>卒業実績一覧 | きたむらミュージックスクール</title>
+    <meta
+      name="description"
+      content="きたむらミュージックスクールの卒業実績一覧ページです。卒業生の活躍をご紹介します。"
+    />
+    <meta
+      property="og:title"
+      content="卒業実績一覧 | きたむらミュージックスクール"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://example.com/result.html" />
+    <meta property="og:image" content="https://example.com/images/ogp.jpg" />
+    <meta property="og:site_name" content="きたむらミュージックスクール" />
+    <meta
+      property="og:description"
+      content="きたむらミュージックスクールの卒業実績一覧ページです。卒業生の活躍をご紹介します。"
+    />
+    <!-- favicon -->
+    <link rel="icon" href="./images/logo.svg" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    <!-- css -->
+    <link rel="stylesheet" href="./css/styles.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <!-- jQuery -->
+    <script
+      defer
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- JavaScript -->
+    <script defer src="./js/script.js"></script>
+  </head>
+  <body>
+    <!-- header -->
+    <header class="p-header l-header">
+      <div class="p-header__inner l-inner">
+        <div class="p-header__logo">
+          <a href="./index.html">
+            <span class="p-header__image">
+              <img src="./images/logo.svg" alt="きたむらミュージックスクール" />
+            </span>
+            <span class="p-header__title"
+              >きたむら<span>ミュージックスクール</span>
+            </span>
+          </a>
+        </div>
+
+        <!-- hamburger -->
+        <button
+          type="button"
+          class="p-header__hamburger js-hamburger"
+          aria-label="メニューを開く"
+          aria-expanded="false"
+          aria-controls="drawer"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="p-header__nav">
+          <nav class="p-header-nav">
+            <ul class="p-header-nav__items">
+              <li class="p-header-nav__item">
+                <a href="./plan.html" class="p-header-nav__link">料金</a>
+              </li>
+              <li class="p-header-nav__item">
+                <a href="./blog.html" class="p-header-nav__link">ブログ</a>
+              </li>
+              <li class="p-header-nav__item">
+                <a href="" class="p-header-nav__link">卒業実績</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="p-header-nav__btn">
+            <a href="" class="c-btn">お問い合わせ</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- drawer -->
+      <div class="c-drawer js-drawer" id="drawer" aria-hidden="true">
+        <nav class="c-drawer__nav" aria-label="メインメニュー">
+          <ul class="c-drawer__items">
+            <li class="c-drawer__item">
+              <a href="./plan.html" class="c-drawer__link js-drawer-link"
+                >料金</a
+              >
+            </li>
+            <li class="c-drawer__item">
+              <a href="./blog.html" class="c-drawer__link js-drawer-link"
+                >ブログ</a
+              >
+            </li>
+            <li class="c-drawer__item">
+              <a href="" class="c-drawer__link js-drawer-link">卒業実績</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="l-main">
+      <!-- page-fv -->
+      <section class="c-page-fv">
+        <div class="c-page-fv__wrap">
+          <div class="c-page-fv__image">
+            <picture>
+              <source media="(min-width: 768px)" srcset="./images/result-fv.jpg" />
+              <img src="./images/result-fv_sp.jpg" alt="" />
+            </picture>
+          </div>
+          <div class="c-page-fv__mask"></div>
+          <div class="c-page-fv__catch">
+            <h1 class="c-page-fv__title">卒業実績</h1>
+          </div>
+        </div>
+      </section>
+
+      <!-- breadcrumb -->
+      <nav class="c-breadcrumb" aria-label="パンくずリスト">
+        <div class="c-breadcrumb__inner l-inner">
+          <div class="c-breadcrumb__list">
+            <span class="c-breadcrumb__item">
+              <a href="./index.html" class="c-breadcrumb__link">ホーム</a>
+            </span>
+            <span class="c-breadcrumb__item" aria-current="page">
+              <a href="#" class="c-breadcrumb__link">卒業実績</a>
+            </span>
+          </div>
+        </div>
+      </nav>
+
+      <!-- result-list -->
+      <section class="p-result-list">
+        <div class="p-result-list__inner l-inner">
+          <h2 class="p-result-list__title">卒業実績一覧</h2>
+          <ul class="p-result-list__list">
+            <li class="p-result-list__item p-result-item">
+              <a href="" class="p-result-item__link">
+                <div class="p-result-item__img-wrap c-card__img-wrap">
+                  <img src="./images/result01.jpg" alt="" />
+                  <span class="c-card__category">ポップス</span>
+                </div>
+                <h3 class="p-result-item__title c-card__title">
+                  タイトルが入ります。タイトルが入ります。タイトルが入ります。
+                </h3>
+                <time datetime="0000-00-00" class="p-result-item__date"
+                  >0000.00.00</time
+                >
+              </a>
+            </li>
+            <li class="p-result-list__item p-result-item">
+              <a href="" class="p-result-item__link">
+                <div class="p-result-item__img-wrap c-card__img-wrap">
+                  <img src="./images/result02.jpg" alt="" />
+                  <span class="c-card__category">ロック</span>
+                </div>
+                <h3 class="p-result-item__title c-card__title">
+                  タイトルが入ります。タイトルが入ります。タイトルが入ります。
+                </h3>
+                <time datetime="0000-00-00" class="p-result-item__date"
+                  >0000.00.00</time
+                >
+              </a>
+            </li>
+            <li class="p-result-list__item p-result-item">
+              <a href="" class="p-result-item__link">
+                <div class="p-result-item__img-wrap c-card__img-wrap">
+                  <img src="./images/result03.jpg" alt="" />
+                  <span class="c-card__category">ジャズ</span>
+                </div>
+                <h3 class="p-result-item__title c-card__title">
+                  タイトルが入ります。タイトルが入ります。タイトルが入ります。
+                </h3>
+                <time datetime="0000-00-00" class="p-result-item__date"
+                  >0000.00.00</time
+                >
+              </a>
+            </li>
+            <li class="p-result-list__item p-result-item">
+              <a href="" class="p-result-item__link">
+                <div class="p-result-item__img-wrap c-card__img-wrap">
+                  <img src="./images/result04.jpg" alt="" />
+                  <span class="c-card__category">ラテン</span>
+                </div>
+                <h3 class="p-result-item__title c-card__title">
+                  タイトルが入ります。タイトルが入ります。タイトルが入ります。
+                </h3>
+                <time datetime="0000-00-00" class="p-result-item__date"
+                  >0000.00.00</time
+                >
+              </a>
+            </li>
+            <li class="p-result-list__item p-result-item">
+              <a href="" class="p-result-item__link">
+                <div class="p-result-item__img-wrap c-card__img-wrap">
+                  <img src="./images/result05.jpg" alt="" />
+                  <span class="c-card__category">クラシック</span>
+                </div>
+                <h3 class="p-result-item__title c-card__title">
+                  タイトルが入ります。タイトルが入ります。タイトルが入ります。
+                </h3>
+                <time datetime="0000-00-00" class="p-result-item__date"
+                  >0000.00.00</time
+                >
+              </a>
+            </li>
+            <li class="p-result-list__item p-result-item">
+              <a href="" class="p-result-item__link">
+                <div class="p-result-item__img-wrap c-card__img-wrap">
+                  <img src="./images/result06.jpg" alt="" />
+                  <span class="c-card__category">ポップス</span>
+                </div>
+                <h3 class="p-result-item__title c-card__title">
+                  タイトルが入ります。タイトルが入ります。タイトルが入ります。
+                </h3>
+                <time datetime="0000-00-00" class="p-result-item__date"
+                  >0000.00.00</time
+                >
+              </a>
+            </li>
+                        <li class="p-result-list__item p-result-item">
+              <a href="" class="p-result-item__link">
+                <div class="p-result-item__img-wrap c-card__img-wrap">
+                  <img src="./images/result07.jpg" alt="" />
+                  <span class="c-card__category">ロック</span>
+                </div>
+                <h3 class="p-result-item__title c-card__title">
+                  タイトルが入ります。タイトルが入ります。タイトルが入ります。
+                </h3>
+                <time datetime="0000-00-00" class="p-result-item__date"
+                  >0000.00.00</time
+                >
+              </a>
+            </li>
+            <li class="p-result-list__item p-result-item">
+              <a href="" class="p-result-item__link">
+                <div class="p-result-item__img-wrap c-card__img-wrap">
+                  <img src="./images/result08.jpg" alt="" />
+                  <span class="c-card__category">ジャズ</span>
+                </div>
+                <h3 class="p-result-item__title c-card__title">
+                  タイトルが入ります。タイトルが入ります。タイトルが入ります。
+                </h3>
+                <time datetime="0000-00-00" class="p-result-item__date"
+                  >0000.00.00</time
+                >
+              </a>
+            </li>
+            <li class="p-result-list__item p-result-item">
+              <a href="" class="p-result-item__link">
+                <div class="p-result-item__img-wrap c-card__img-wrap">
+                  <img src="./images/result09.jpg" alt="" />
+                  <span class="c-card__category">ラテン</span>
+                </div>
+                <h3 class="p-result-item__title c-card__title">
+                  タイトルが入ります。タイトルが入ります。タイトルが入ります。
+                </h3>
+                <time datetime="0000-00-00" class="p-result-item__date"
+                  >0000.00.00</time
+                >
+              </a>
+            </li>
+            <li class="p-result-list__item p-result-item">
+              <a href="" class="p-result-item__link">
+                <div class="p-result-item__img-wrap c-card__img-wrap">
+                  <img src="./images/result10.jpg" alt="" />
+                  <span class="c-card__category">クラシック</span>
+                </div>
+                <h3 class="p-result-item__title c-card__title">
+                  タイトルが入ります。タイトルが入ります。タイトルが入ります。
+                </h3>
+                <time datetime="0000-00-00" class="p-result-item__date"
+                  >0000.00.00</time
+                >
+              </a>
+            </li>
+          </ul>
+          <!-- pagination -->
+          <nav class="c-pagination" aria-label="ページネーション">
+            <ul class="c-pagination__list">
+              <li class="c-pagination__item">
+                <span class="c-pagination__link is-current" aria-current="page"
+                  >1</span
+                >
+              </li>
+              <li class="c-pagination__item">
+                <a href="" class="c-pagination__link">2</a>
+              </li>
+              <li class="c-pagination__item">
+                <a href="" class="c-pagination__link">3</a>
+              </li>
+              <li class="c-pagination__item c-pagination__item--ellipsis">…</li>
+              <li class="c-pagination__item">
+                <a href="" class="c-pagination__link">9</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+
+      <!-- btn -->
+      <div class="p-fixed-area">
+        <a href="" class="c-btn--2 c-btn--fixed js-fixed-btn">お問い合わせ</a>
+        <button
+          type="button"
+          class="c-pagetop js-pagetop js-fixed-btn"
+          aria-label="ページの先頭へ戻る"
+        >
+          <span class="c-pagetop__icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="p-footer l-footer">
+      <div class="p-footer__inner l-inner">
+        <nav class="p-footer__nav p-footer-nav">
+          <ul class="p-footer-nav__items">
+            <li class="p-footer-nav__item">
+              <a href="./index.html" class="p-footer-nav__link">ホーム</a>
+            </li>
+            <li class="p-footer-nav__item">
+              <a href="./plan.html" class="p-footer-nav__link">料金</a>
+            </li>
+            <li class="p-footer-nav__item">
+              <a href="./blog.html" class="p-footer-nav__link">ブログ</a>
+            </li>
+            <li class="p-footer-nav__item">
+              <a href="" class="p-footer-nav__link">卒業実績</a>
+            </li>
+          </ul>
+        </nav>
+        <a class="p-footer__logo">
+          <img
+            src="./images/logo-white.svg"
+            alt="きたむらミュージックスクール"
+          />
+        </a>
+        <p class="p-footer__copyright">
+          <small>Copyright © 0000 KITAMURA music school Inc. All Rights</small>
+        </p>
+        <ul class="p-footer__sns">
+          <li class="p-footer__sns-item">
+            <a href="" class="p-footer__sns-link" aria-label="Twitter">
+              <img src="./images/icon-twitter.svg" alt="" />
+            </a>
+          </li>
+          <li class="p-footer__sns-item">
+            <a href="" class="p-footer__sns-link" aria-label="Facebook">
+              <img src="./images/icon-facebook.svg" alt="" />
+            </a>
+          </li>
+          <li class="p-footer__sns-item">
+            <a href="" class="p-footer__sns-link" aria-label="YouTube">
+              <img src="./images/icon-youtube.svg" alt="" />
+            </a>
+          </li>
+          <li class="p-footer__sns-item">
+            <a href="" class="p-footer__sns-link" aria-label="Instagram">
+              <img src="./images/icon-instagram.svg" alt="" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

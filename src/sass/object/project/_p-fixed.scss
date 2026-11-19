@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.p-fixed-area {
+  position: sticky;
+  bottom: 0;
+  height: 0;
+  z-index: 999;
+}

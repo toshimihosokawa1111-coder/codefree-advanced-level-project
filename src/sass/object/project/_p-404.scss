@@ -1,0 +1,34 @@
+@use "global" as *;
+
+.p-404 {
+  padding-top: myrem(43);
+  padding-bottom: myrem(50);
+
+  @include mq(md) {
+    padding-top: myrem(67);
+    padding-bottom: myrem(90);
+  }
+}
+
+.p-404__inner {
+
+}
+
+.p-404__text {
+  font-size: myrem(16);
+  line-height: calc(30 / 16);
+
+  @include mq(md) {
+    font-size: myrem(18);
+    line-height: calc(30 / 18);
+    text-align: center;
+  }
+}
+
+.p-404__btn {
+  margin-top: myrem(9);
+
+  @include mq(md) {
+    margin-top: myrem(40);
+  }
+}

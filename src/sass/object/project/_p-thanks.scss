@@ -1,0 +1,30 @@
+@use "global" as *;
+
+.p-thanks {
+  padding-top: myrem(47);
+  padding-bottom: myrem(50);
+
+  @include mq(md) {
+    padding-top: myrem(67);
+    padding-bottom: myrem(90);
+  }
+}
+
+.p-thanks__inner {
+
+}
+
+.p-thanks__text {
+  font-size: myrem(16);
+  line-height: calc(30 / 16);
+
+  @include mq(md) {
+    font-size: myrem(18);
+    line-height: calc(30 / 18);
+    text-align: center;
+  }
+}
+
+.p-thanks__btn {
+  margin-top: myrem(39);
+}

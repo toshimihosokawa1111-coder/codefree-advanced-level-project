@@ -1,0 +1,42 @@
+@use "global" as *;
+
+.p-catch {
+  background: $red;
+  padding-top: myrem(49);
+  padding-bottom: myrem(39);
+
+  @include mq(md) {
+    padding-top: myrem(68);
+    padding-bottom: myrem(60);
+  }
+}
+
+.p-catch__inner {
+
+}
+
+.p-catch__title {
+  font-size: myrem(25);
+  font-weight: bold;
+  line-height: calc(40 / 25);
+  color: $white;
+  text-align: center;
+
+  @include mq(md) {
+    font-size: myrem(30);
+    line-height: calc(50 / 30);
+  }
+}
+
+.p-catch__lead {
+  margin-top: myrem(15);
+  font-size: myrem(18);
+  line-height: calc(30 / 18);
+  color: $white;
+  text-align: center;
+
+  @include mq(md) {
+    margin-top: myrem(30);
+  }
+}
+

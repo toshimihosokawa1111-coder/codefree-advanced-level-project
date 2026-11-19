@@ -1,0 +1,32 @@
+@use "global" as *;
+
+.p-footer-nav {
+  color: $white;
+
+}
+
+.p-footer-nav__items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: myrem(29);
+
+  @include mq(md) {
+    column-gap: myrem(32);
+  }
+}
+
+
+.p-footer-nav__item {
+
+}
+
+.p-footer-nav__link {
+  font-size: myrem(17);
+  font-weight: bold;
+  line-height: calc(33 / 17);
+  
+}
+
+
+

@@ -1,0 +1,64 @@
+@use "global" as *;
+
+.p-voice-item {
+
+}
+
+.p-voice-item__link {
+  display: block;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.p-voice-item__link img {
+  aspect-ratio: 335 / 200;
+  object-fit: cover;
+  transition: transform 0.4s;
+
+  @include mq(md) {
+    aspect-ratio: 270 / 190;
+  }
+}
+
+.p-voice-item__title,
+.p-voice-item__text {
+  transition: opacity 0.4s;
+}
+
+.p-voice-item__title {
+  margin-top: myrem(27);
+  font-size: myrem(22);
+  font-weight: bold;
+  line-height: calc(33 / 22);
+  text-align: center;
+
+  @include mq(md) {
+    margin-top: myrem(17);
+  }
+}
+
+.p-voice-item__text {
+  margin-top: myrem(10);
+  font-size: myrem(18);
+  line-height: calc(30 /18);
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 3 !important;
+  overflow: hidden !important;
+}
+
+@include mq(md) {
+  .p-voice-item__link:hover {
+    opacity: 1;
+  }
+
+  .p-voice-item__link:hover .p-voice-item__img img {
+    transform: scale(1.1);
+  }
+
+  .p-voice-item__link:hover .p-voice-item__title,
+  .p-voice-item__link:hover .p-voice-item__text {
+    opacity: 0.7;
+  }
+}

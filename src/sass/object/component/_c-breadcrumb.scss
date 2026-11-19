@@ -1,0 +1,49 @@
+@use "global" as *;
+
+.c-breadcrumb {
+  background: $bg-light-gray;
+}
+
+.c-breadcrumb__inner {
+
+}
+
+.c-breadcrumb__list {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  white-space: nowrap;
+  list-style: none;
+  min-height: myrem(36);
+  margin: 0;
+  padding: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include mq(md) {
+    min-height: myrem(50);
+  }
+}
+
+.c-breadcrumb__item {
+  display: flex;
+  align-items: center;
+}
+
+.c-breadcrumb__item + .c-breadcrumb__item::before {
+  content: ">";
+  margin-inline: myrem(20);
+}
+
+.c-breadcrumb__link {
+  display: inline-block;
+  font-size: myrem(16);
+  line-height: calc(33 / 16);
+}
+
+
+

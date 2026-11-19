@@ -1,46 +1,22 @@
 jQuery(function ($) {
 
-  // ページトップボタン
-  var topBtn = $('.js-pagetop');
-  topBtn.hide();
-
-  $(window).scroll(function () {
-    let headerHeight = window.innerWidth >= 768 ? 81 : 51;
-    let aboutTop = $('#about').offset().top - headerHeight;
-
-    if ($(this).scrollTop() > aboutTop) {
-      topBtn.fadeIn();
-    } else {
-      topBtn.fadeOut();
-    }
-  });
-
-  topBtn.click(function () {
-    $('html, body').stop(true).animate({ scrollTop: 0 }, 300, 'swing');
-    return false;
-  });
-
-  function getHeaderHeight() {
-    const vw = window.innerWidth;
-    if (vw >= 1080) {
-      return 80;
-    } else if (vw >= 768) {
-      return Math.round(80 * vw / 1080);
-    } else {
-      return 50;
-    }
-  }
-
-  // ヘッダーの背景色変更
+  // ページトップボタンとお問い合わせボタン:ヘッダーの下端がFVの下端に触れたら表示
   $(window).on('scroll', function() {
     let scrollTop = $(this).scrollTop();
-    let aboutTop = $('#about').offset().top;
-
-    if (scrollTop >= aboutTop) {
-      $('.p-header').addClass('is-scrolled');
+    let headerHeight = $('.p-header').outerHeight();
+    let $fv = $('.p-fv, .c-page-fv, .c-breadcrumb');
+    let targetTop = $fv.offset().top + $fv.outerHeight() - headerHeight;
+    if (scrollTop >= targetTop) {
+      $('.js-fixed-btn').addClass('is-show');
     } else {
-      $('.p-header').removeClass('is-scrolled');
+      $('.js-fixed-btn').removeClass('is-show');
     }
+  });
+
+  // ページトップボタンのクリック
+  $('.js-pagetop').on('click', function() {
+    $('html, body').stop(true).animate({ scrollTop: 0 }, 300, 'swing');
+    return false;
   });
 
   // ロゴクリックでトップへ
@@ -48,8 +24,8 @@ jQuery(function ($) {
     e.preventDefault();
     $('html, body').stop().animate({ scrollTop: 0 }, 300, 'swing');
   });
-  
-  // ドロワーを閉じる（スクロール時）
+
+  // ドロワーを閉じる(スクロール時)
   $(window).on('scroll', function() {
     if ($('.js-drawer').hasClass('is-open')) {
       $('.js-drawer').removeClass('is-open');
@@ -61,43 +37,22 @@ jQuery(function ($) {
   });
 
   // Swiper
-  const swiper = new Swiper('.p-mv__swiper', {
+  const voiceSwiper = new Swiper(".p-voice__swiper", {
     loop: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
+    autoHeight: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    // 前後の矢印
+    navigation: {
+      nextEl: ".p-voice__next",
+      prevEl: ".p-voice__prev",
     },
-    speed: 2000,
-    autoHeight: false,
-  });
-
-  // Worksモーダル
-  $('.js-works-item').on('click', function() {
-    const modalSrc = $(this).data('modal-src');
-    const modalCaption = $(this).data('modal-caption');
-    $('.js-works-modal-img').attr('src', modalSrc);
-    $('.js-works-modal-caption').text(modalCaption);
-    $('.js-works-modal').addClass('is-open');
-    $('body').css('overflow', 'hidden');
-    $('.js-pagetop').hide();
-  });
-
-  $('.js-works-modal-overlay, .js-works-modal-close').on('click', function() {
-    $('.js-works-modal').removeClass('is-open');
-    $('body').css('overflow', '');
-
-    let headerHeight = window.innerWidth >= 768 ? 80 : 50;
-    let aboutTop = $('#about').offset().top - headerHeight;
-    if ($(window).scrollTop() > aboutTop) {
-      $('.js-pagetop').fadeIn();
-    }
-  });
-
-  // Worksアイテムのテキスト文字数に応じてクラスを付与する
-  $('.p-works-item__text').each(function() {
-    if ($(this).text().trim().length >= 10) {
-      $(this).closest('.p-works-item__content').addClass('is-short');
-    }
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 35,
+      },
+    },
   });
 
   // ハンバーガーメニュー単体の開閉
@@ -109,21 +64,31 @@ jQuery(function ($) {
     $(this).attr('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
   });
 
-  // js-fadeを自動付与
-  $('.c-section-title, .p-about__title, .p-about__text, .p-service-item, .p-works-item, .p-news__column, .p-company__contents, .p-contact__lead, .p-contact-item, .p-contact-item--category, .p-contact__btn').each(function() {
-    $(this).addClass('js-fade');
+  // アコーディオン
+  $('.js-faq-button').on('click', function() {
+    const $item = $(this);
+    const isOpen = $item.toggleClass('is-open').hasClass('is-open');
+
+    $item.find('.p-faq-item__panel').slideToggle(400);
+    $item.find('.p-faq-item__button').attr('aria-expanded', isOpen);
   });
 
-  // スクロールアニメーション
-  $(window).on('scroll', function() {
-    $('.js-fade, .js-fade-item').each(function() {
-      let elementTop = $(this).offset().top;
-      let windowBottom = $(window).scrollTop() + $(window).height();
+  // 表のスクロールバー(SP):スクロールに合わせて、つまみを動かす
+  const $tableScroll = $('.p-plan-detail__scroll');
+  const $thumb = $('.p-plan-detail__bar-thumb');
 
-      if (elementTop < windowBottom) {
-        $(this).addClass('is-show');
-      }
+  if ($tableScroll.length) {
+    $tableScroll.on('scroll', function() {
+      const el = $tableScroll[0];
+      const scrollable = el.scrollWidth - el.clientWidth;
+      if (scrollable <= 0) return;
+
+      const track = $('.p-plan-detail__bar-track').width() - $thumb.width();
+      const left = (el.scrollLeft / scrollable) * track;
+
+      $thumb.css('left', left + 'px');
     });
-  });
+  }
+
 
 });

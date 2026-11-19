@@ -1,22 +1,21 @@
 @use 'sass:math';
 
 // インナー幅
-$innerWidth: 920px;
+$innerWidth: 1040px;
 
 // 余白
 $padding-pc: 30px;
-$padding-sp: 30px;
+$padding-sp: 20px;
 
 // フォント
-$font-main: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS PMincho", serif;
+$font-main: "Yu Gothic", "Yu Gothic Medium", "游ゴシック体", YuGothic, sans-serif;
 
 // 色指定
 $black: #000;
 $white: #fff;
-$green: #4D9600;
-$bg-light-green: rgba(#4D9600, 0.1);
-$bg-light-green2: rgba(#4D9600, 0.15);
-$border-green:  #55A500;
+$red: #CB0000;
+$bg-light-gray: #E8E8E8;
+$gray: rgba(#00000080, 0.502%);
 
 // ブレイクポイント
 $breakpoints: (

@@ -1,0 +1,32 @@
+@use "global" as *;
+
+.p-blog-item__link {
+  display: block;
+}
+
+.p-blog-item__img-wrap {
+  @include mq(md) {
+    aspect-ratio: 260 / 200;
+    flex: none;
+  }
+}
+
+.p-blog-item__title {
+  margin-top: myrem(30);
+
+  @include mq(md) {
+    margin-top: myrem(20);
+  }
+}
+
+.p-blog-item__date {
+  display: block;
+  margin-top: myrem(6);
+  font-size: myrem(17);
+  line-height: calc(30 / 17);
+  text-align: right;
+
+  @include mq(md) {
+    margin-top: myrem(11);
+  }
+}

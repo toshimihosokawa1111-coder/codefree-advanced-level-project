@@ -1,0 +1,65 @@
+@use "global" as *;
+
+.p-flow-item {
+  --dot: #{myrem(20)};
+  --gap: #{myrem(20)};
+
+  @include mq(md) {
+    --gap: #{myrem(50)};
+  }
+}
+
+.p-flow-item__wrap {
+
+  @include mq(md) {
+    display: flex;
+    align-items: flex-start;
+    column-gap: myrem(60);
+
+    @include mq(md) {
+      column-gap: myrem(38);
+    }
+  }
+}
+
+.p-flow-item__head {
+  display: flex;
+  align-items: center;
+  column-gap: var(--gap);
+  //height: myrem(33);
+}
+
+.p-flow-item__dot {
+  display: block;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  width: var(--dot);
+  height: var(--dot);
+  background: $red;
+  border-radius: 50%;
+}
+
+.p-flow-item__title {
+  font-size: myrem(22);
+  font-weight: bold;
+  line-height: calc(33 / 22);
+  width: myrem(154);
+  color: $red;
+}
+
+.p-flow-item__text {
+  padding-left: calc(var(--dot) + var(--gap));
+  margin-top: myrem(9);
+  font-size: myrem(16);
+  line-height: calc(30 / 16);
+  flex: 1;
+
+  @include mq(md) {
+    margin-top: 0;
+    font-size: myrem(18);
+    line-height: calc(30 / 18);
+    padding: 0;
+  }
+}
+

@@ -1,0 +1,40 @@
+@use "global" as *;
+
+.c-page-fv__wrap {
+  position: relative;
+  width: 100%;
+  z-index: 0;
+}
+
+.c-page-fv__mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: visible;
+  background: rgba(80, 80, 80, 0.49);
+  mix-blend-mode: multiply;
+}
+
+.c-page-fv__catch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: myrem(8);
+}
+
+.c-page-fv__title {
+  color: $white;
+  font-size: myrem(25);
+  line-height: calc(60 / 25);
+  font-weight: bold;
+}

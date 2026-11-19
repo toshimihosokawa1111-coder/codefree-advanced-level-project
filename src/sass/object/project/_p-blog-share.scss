@@ -1,0 +1,16 @@
+@use "global" as *;
+
+.p-blog-share {
+  margin-top: myrem(21);
+}
+
+.p-blog-share__list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  column-gap: myrem(3);
+
+  @include mq(md) {
+    display: flex;
+    align-items: center;
+  }
+}

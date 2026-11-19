@@ -1,0 +1,82 @@
+@use "global" as *;
+
+.p-plan-fee {
+  padding-top: myrem(46);
+
+  @include mq(md) {
+    padding-top: myrem(67);
+  }
+}
+
+.p-plan-fee__title {
+  font-size: myrem(25);
+  font-weight: bold;
+  line-height: calc(40 / 25);
+  text-align: center;
+}
+
+.p-plan-fee__formula {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: myrem(20);
+  margin-top: myrem(39);
+
+  @include mq(md) {
+    flex-direction: row;
+    justify-content: center;
+    column-gap: myrem(30);
+    margin-top: myrem(37);
+  }
+}
+
+.p-plan-fee__box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: myrem(20);
+  font-weight: bold;
+  line-height: calc(33 / 20);
+  background: $red;
+  color: $white;
+  width: myrem(210);
+  height: myrem(60);
+}
+
+.p-plan-fee__plus {
+  position: relative;
+  width: myrem(18.5);
+  height: myrem(18.5);
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: $black;
+    transform: translate(-50%, -50%);
+  }
+
+  &::before {
+    width: 100%;
+    height: myrem(4);
+  }
+
+  &::after {
+    width: myrem(4);
+    height: 100%;
+  }
+}
+
+.p-plan-fee__text {
+  font-size: myrem(16);
+  line-height: calc(30 / 16);
+  margin-top: myrem(46);
+
+  @include mq(md) {
+    font-size: myrem(18);
+    line-height: calc(30 / 18);
+    margin-top: myrem(48);
+  }
+}

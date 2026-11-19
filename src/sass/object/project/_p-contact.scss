@@ -1,52 +1,45 @@
 @use "global" as *;
 
 .p-contact {
-  background: $bg-light-green2;
-  padding-top: myrem(50);
-  padding-bottom: myrem(50);
-   @include mq(md) {
-     padding-top: myrem(82);
-     padding-bottom: myrem(80);
-   }
-}
-
-.p-contact__inner {
+  padding-top: myrem(47);
+  padding-bottom: myrem(108);
 
   @include mq(md) {
-    max-width: 920px + $padding-pc * 2;
-    padding-left: myrem(90);
-    padding-right: myrem(90);
+    padding-top: myrem(68);
+    padding-bottom: myrem(100);
   }
 }
 
-.p-contact__title {
-  margin-left: myrem(9);
-
-}
-
 .p-contact__lead {
-  margin-top: myrem(35);
-  font-size: myrem(20);
-  font-weight: 500;
-  line-height: 1.65;
-
+  font-size: myrem(16);
+  line-height: calc(30 / 16);
+  
   @include mq(md) {
-    margin-top: myrem(33);
+    font-size: myrem(18);
+    line-height: calc(30 / 18);
+    text-align: center;
   }
 }
 
 .p-contact__form {
-  margin-top: myrem(40);
+  margin-top: myrem(32);
 
   @include mq(md) {
-    margin-top: myrem(69);
+    margin-top: myrem(65);
   }
 }
 
 .p-contact__item {
-  margin-top: myrem(30);
+  display: flex;
+  flex-direction: column;
+  row-gap: myrem(2);
+  margin-top: myrem(13);
+
   @include mq(md) {
-    margin-top: myrem(50);
+    flex-direction: row;
+    align-items: center;
+    column-gap: myrem(29);
+    margin-top: myrem(30);
   }
 }
 
@@ -54,35 +47,148 @@
   margin-top: 0;
 }
 
-.p-contact__submit {
-  margin-top: myrem(50);
-  text-align: center;
+.p-contact__item--message {
+  margin-top: myrem(9);
 
   @include mq(md) {
-    margin-top: myrem(80);
-
+    margin-top: myrem(26);
+    align-items: normal;
   }
 }
 
-.p-contact__btn {
+.p-contact__item--check {
+  @include mq(md) {
+    align-items: normal;
+    margin-top: myrem(26);
+  }
+}
+
+.p-contact__label {
+  font-size: myrem(16);
+  line-height: calc(33 / 16);
+
+  @include mq(md) {
+    flex-shrink: 0;
+    font-size: myrem(20);
+    line-height: calc(33 / 20);
+    width: myrem(140);
+  }
+}
+
+.p-contact__field {
+  @include mq(md) {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+.p-contact__input,
+.p-contact__textarea {
   width: 100%;
-  max-width: myrem(315);
-  padding: myrem(7) myrem(20) myrem(8) myrem(20);
-  background: $green;
-  color: $white;
-  font-size: myrem(20);
-  font-weight: 600;
-  line-height: 1.65;
-  transition: background 0.4s ease, color 0.4s ease, opacity 1.5s ease, transform 1.5s ease;
-  border: 1px solid $green;
+  padding-inline: myrem(20);
+  padding-top: myrem(6);
+  background: $white;
+  border: 0.5px solid $black;
+
+  @include mq(md) {
+
+  }
+
+  &::placeholder {
+    color: #B2B2B2;
+  }
+}
+
+.p-contact__input {
+  font-size: myrem(15);
+  line-height: calc(33 / 15);
+  height: myrem(40);
+}
+
+.p-contact__textarea {
+  font-size: myrem(15);
+  line-height: calc(25 / 15);
+  height: myrem(190);
+  padding-block: myrem(12);
+  resize: none;
+
+  @include mq(md) {
+    height: myrem(300);
+    padding-block: myrem(13);
+  }
+}
+
+.p-contact__checks {
+  display: flex;
+  flex-direction: column;
+  row-gap: myrem(8);
+
+  @include mq(md) {
+    flex: 1;
+    min-width: 0;
+    row-gap: myrem(10);
+  }
+}
+
+.p-contact__check {
+  display: flex;
+  align-items: center;
+  column-gap: myrem(10);
   cursor: pointer;
 
   @include mq(md) {
-    max-width: myrem(300);
+    column-gap: myrem(20);
   }
 }
 
-.p-contact__btn:hover {
+.p-contact__checkbox {
+  position: relative;
+  flex-shrink: 0;
+  width: myrem(20);
+  height: myrem(20);
   background: $white;
-  color: $green;
+  border: 0.5px solid $black;
+  border-radius: 0;
+  appearance: none;
+  margin: 0;
+  cursor: pointer;
+
+  &:checked::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30%;
+    height: 60%;
+    border-right: 2px solid $black;
+    border-bottom: 2px solid $black;
+    transform: translate(-50%, -60%) rotate(45deg);
+  }
+}
+
+.p-contact__check-text {
+  font-size: myrem(16);
+  line-height: calc(30 / 16);
+
+  @include mq(md) {
+    font-size: myrem(18);
+    line-height: calc(30 / 18);
+  }
+}
+
+// 送信ボタン
+.p-contact__btn {
+  margin-top: myrem(44);
+
+  @include mq(md) {
+    //margin-top: myrem(●);
+  }
+}
+
+.p-contact__pagetop {
+  bottom: myrem(18);        // お問い合わせボタンがない分、下げる
+
+  @include mq(md) {
+    bottom: myrem(30);
+  }
 }
