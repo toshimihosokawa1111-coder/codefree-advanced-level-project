@@ -11,6 +11,12 @@
   }
 }
 
+.p-result-item__category {
+  @include mq(md) {
+    min-width: myrem(100);
+  }
+}
+
 .p-result-item__title {
   margin-top: myrem(30);
 
@@ -20,12 +26,6 @@
 }
 
 .p-result-item__date {
-  display: block;
-  margin-top: myrem(6);
-  font-size: myrem(17);
-  line-height: calc(30 / 17);
-  text-align: right;
-
   @include mq(md) {
     margin-top: myrem(10);
     font-size: myrem(18);

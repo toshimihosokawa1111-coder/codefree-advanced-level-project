@@ -2,7 +2,7 @@
 
 .p-result-list {
   padding-top: myrem(40);
-  padding-bottom: myrem(60);
+  padding-bottom: myrem(203);
 
   @include mq(md) {
     padding-top: myrem(67);
@@ -24,18 +24,20 @@
 .p-result-list__list {
   display: flex;
   flex-direction: column;
-  //row-gap: myrem(50);
+  row-gap: myrem(40);
   margin-top: myrem(25);
 
   @include mq(md) {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);   // PCは2列
-    column-gap: myrem(106);                  // 概算。Figmaで測り直す
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: myrem(106);
     row-gap: myrem(61);
     margin-top: myrem(40);
   }
 }
 
 .p-result-list__item:nth-child(n + 5) {
-  margin-top: myrem(10);
+  @include mq(md) {
+    margin-top: myrem(10);
+  }
 }

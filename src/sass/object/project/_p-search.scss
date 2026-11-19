@@ -10,10 +10,6 @@
   }
 }
 
-.p-search__inner {
-
-}
-
 .p-search__head {
   display: flex;
   align-items: center;
@@ -27,10 +23,6 @@
   font-weight: 500;
 }
 
-.p-search__keyword {
-  
-}
-
 .p-search__count {
   font-size: myrem(18);
   line-height: calc(30 / 18);
@@ -41,17 +33,8 @@
   margin-top: myrem(42);
   display: grid;
   row-gap: myrem(39);
-  
+
   @include mq(md) {
     row-gap: myrem(70);
   }
-}
-
-.p-search__item {
-  //margin-top: myrem(39);
-}
-
-
-.p-search__item:first-child {
-  //margin-top: 0;
 }

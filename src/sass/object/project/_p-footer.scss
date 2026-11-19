@@ -4,19 +4,11 @@
   background: $red;
   padding-top: myrem(44);
   padding-bottom: myrem(50);
-  
+
   @include mq(md) {
     padding-top: myrem(45);
     padding-bottom: myrem(48);
   }
-}
-
-.p-footer__inner {
-
-}
-
-.p-footer__nav {
-
 }
 
 .p-footer__logo {
@@ -24,10 +16,6 @@
   width: myrem(32);
   margin-top: myrem(19);
   margin-inline: auto;
-}
-
-.p-footer__logo img {
-
 }
 
 .p-footer__copyright {
@@ -61,8 +49,3 @@
 .p-footer__sns-item {
   margin-top: myrem(5);
 }
-
-.p-footer__sns-link {
-
-}
-

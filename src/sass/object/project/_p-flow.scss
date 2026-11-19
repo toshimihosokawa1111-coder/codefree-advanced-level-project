@@ -73,7 +73,7 @@
     left: myrem(17);
     left: calc(var(--shift) + #{myrem(17)});
   }
-  
+
   &::after {
     transform: translateX(-50%) rotate(-45deg);
     left: 0;

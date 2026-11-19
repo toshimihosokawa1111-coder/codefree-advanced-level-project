@@ -30,10 +30,6 @@
   }
 }
 
-.p-header__logo {
-
-}
-
 .p-header__logo a {
   display: flex;
   align-items: center;
@@ -93,20 +89,12 @@
   }
 }
 
-.p-header-nav {
-
-}
-
 .p-header-nav__items {
   @include mq(md) {
     display: flex;
     align-items: center;
     gap: myrem(33);
   }
-}
-
-.p-header-nav__item {
-
 }
 
 .p-header-nav__link {
